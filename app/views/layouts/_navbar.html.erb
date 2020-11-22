@@ -1,6 +1,10 @@
 <p class='navbar'>
     <%= link_to 'Home', root_path %>
     
+    <p class="login-alerts">
+        <%= render 'layouts/alerts' %>
+    </p>
+    
     <p class='user-auth'>
         <% if current_user %>
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>

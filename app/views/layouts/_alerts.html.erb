@@ -1,6 +1,8 @@
     <% if user_signed_in? %>
-        <p class="notice"> Welcome, <%= current_user.email %></p>
+        <p class="notice">
+            <span>Hello, </span><%= link_to "#{current_user.email}", users_show_path %>
+        </p>
     <% else %>
-            <p class="notice"><%= notice %></p>
+        <p class="notice"><%= notice %></p>
     <% end %>
     <p class="alert"><%= alert %></p>
