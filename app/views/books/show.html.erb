@@ -22,7 +22,7 @@
 </p>
 
 
-<h2>Review From</h2>
+<h2>Write your review</h2>
   <%= form_with(model: @book_review, local: true) do |form| %>
     <div class= "field">
       <%= form.text_area :review %>
@@ -35,14 +35,13 @@
 <% end %>
 
 
-<form action="/book_reviews" accept-charset="UTF-8" method="post">
+<h2>Review</h2>
+<% @book.book_review.each do |book_review| %>
+  <ul>
+    <li><%= book_review.review %>(<%= book_review.user_id %>)</li>
+  </ul>
+<% end %>
 
-  <label for="review">Email</label>
-  <input type="text" name="book_review[review]" id="user_email">
-
-  <input type="submit" name="commit" value="Submit">
-
-</form>
 
 
 
